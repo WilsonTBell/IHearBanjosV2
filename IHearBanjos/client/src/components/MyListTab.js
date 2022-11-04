@@ -2,12 +2,13 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Card, CardBody, Button } from "reactstrap";
 import { deleteTab } from "../modules/tabManager";
+import "./Tab.css"
 
 export const MyListTab = ({ tab }) => {
     const navigate = useNavigate()
 
     return (
-        <Card>
+        <Card className='tabCard'>
             <p className="text-left px-2">Posted by: {tab.banjoist.name}</p>
             <CardBody>
                 <p>

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { Card, CardBody } from "reactstrap"
 import { getTabById } from "../modules/tabManager"
 import { IKImage } from 'imagekitio-react';
+import "./Tab.css"
 
 export const TabDetail = () => {
     const [tab, setTab] = useState(null)
@@ -25,10 +26,11 @@ export const TabDetail = () => {
         <div className="container">
             <div className="row justify-content-center">
                 <IKImage
+                    className='image'
                     urlEndpoint={urlEndpoint}
                     path={tab.imageLocation}
                 />
-                <Card>
+                <Card className='tabCard'>
                     <CardBody>
                         <p>
                             <strong className="row justify-content-center">{tab.title.toUpperCase()}</strong>

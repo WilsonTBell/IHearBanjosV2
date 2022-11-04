@@ -3,6 +3,7 @@ import { getAllTabs } from "../modules/tabManager";
 import { AllListTab } from "./AllListTab";
 import { useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
+import "./Tab.css"
 
 export const AllTabs = () => {
     const [tabs, setTabs] = useState([])

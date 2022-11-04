@@ -1,0 +1,25 @@
+.tabCard {
+    margin: 5px;
+    background-color: #ECB984;
+    padding: 2%;
+}
+
+.image {
+    height: 60%;
+    margin: 2%;
+    border: 5px solid #ECB984;
+}
+
+.btn {
+    margin: .5%;
+    background-color: #963A2F;
+}
+
+.upload {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.tabForm {
+    margin: 2%;
+}

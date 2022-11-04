@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useNavigate } from "react-router-dom";
 import { register } from "../modules/authManager";
+import './Form.css'
 
 export default function Register() {
     const navigate = useNavigate();
@@ -10,6 +11,7 @@ export default function Register() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [confirmPassword, setConfirmPassword] = useState();
+
 
     const registerClick = (e) => {
         e.preventDefault();
@@ -25,7 +27,7 @@ export default function Register() {
     };
 
     return (
-        <Form onSubmit={registerClick}>
+        <Form className='registerForm' onSubmit={registerClick}>
             <fieldset>
                 <FormGroup>
                     <Label htmlFor="name"> Name</Label>

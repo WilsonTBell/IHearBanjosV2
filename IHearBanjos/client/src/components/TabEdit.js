@@ -6,6 +6,7 @@ import { getTabById } from "../modules/tabManager";
 import { getAllTypes } from "../modules/typeManager";
 import { getAllDifficulties } from "../modules/difficultyManager";
 import { editTab } from "../modules/tabManager";
+import "./Tab.css"
 
 
 export const TabEdit = ({ }) => {
@@ -111,13 +112,13 @@ export const TabEdit = ({ }) => {
                     }
                 />
             </FormGroup>
-            <Label for="ImageUpload">Upload your Tab Image File</Label>
             <IKContext
                 urlEndpoint={urlEndpoint}
                 publicKey={publicKey}
                 authenticationEndpoint={authenticationEndpoint}
             >
                 <IKUpload
+                    className="upload"
                     onError={onError}
                     onSuccess={onSuccess}
                 />
@@ -148,13 +149,13 @@ export const TabEdit = ({ }) => {
                     />
                 </div>
             </FormGroup>
-            <FormGroup>
+            <div>
                 <Button onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                     className="btn btn-primary">Save</Button>
-            </FormGroup>
-        </Form>
-        <Button onClick={() => navigate("/tab")}>Cancel</Button>
 
+                <Button onClick={() => navigate("/tab")}>Cancel</Button>
+            </div>
+        </Form>
 
     </>
 
@@ -163,7 +164,6 @@ export const TabEdit = ({ }) => {
 const Dropdown = ({ label, options, onChange }) => {
     return (
         <div>
-            <Label for={label} >{label}</Label>
             <select onChange={(evt) => onChange(evt)}>
                 <option value={0}>Select your {label}</option>
                 {options.map((option) => (

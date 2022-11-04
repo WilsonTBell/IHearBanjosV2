@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import ApplicationViews from "./components/ApplicationViews";
 import { onLoginStatusChange } from "./modules/authManager";
 import { getCurrentBanjoistByFirebaseId } from './modules/banjoistManager';
+import "./App.css"
 import "firebase/auth";
 
 function App() {

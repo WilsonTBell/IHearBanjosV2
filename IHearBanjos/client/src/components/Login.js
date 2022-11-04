@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useNavigate, Link } from "react-router-dom";
 import { login } from "../modules/authManager";
+import './Form.css'
 
 export default function Login() {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function Login() {
     };
 
     return (
-        <Form onSubmit={loginSubmit}>
+        <Form className='loginForm' onSubmit={loginSubmit}>
             <fieldset>
                 <FormGroup>
                     <Label for="email">Email</Label>
@@ -39,9 +40,6 @@ export default function Login() {
                 <FormGroup>
                     <Button>Login</Button>
                 </FormGroup>
-                <em>
-                    Not registered? <Link to="register">Register</Link>
-                </em>
             </fieldset>
         </Form>
     );

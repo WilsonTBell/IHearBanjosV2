@@ -5,6 +5,7 @@ import { addTab } from "../modules/tabManager";
 import { IKContext, IKUpload } from 'imagekitio-react'
 import { getAllTypes } from "../modules/typeManager";
 import { getAllDifficulties } from "../modules/difficultyManager";
+import "./Tab.css"
 
 export const TabForm = () => {
     const navigate = useNavigate();
@@ -62,7 +63,6 @@ export const TabForm = () => {
 
     return <>
 
-
         <Form className="tabForm">
             <FormGroup>
                 <Label for="Title">Title</Label>
@@ -96,13 +96,13 @@ export const TabForm = () => {
                     }
                 />
             </FormGroup>
-            <Label for="ImageUpload">Upload your Tab Image File</Label>
             <IKContext
                 urlEndpoint={urlEndpoint}
                 publicKey={publicKey}
                 authenticationEndpoint={authenticationEndpoint}
             >
                 <IKUpload
+                    className="upload"
                     onError={onError}
                     onSuccess={onSuccess}
                 />
@@ -133,12 +133,14 @@ export const TabForm = () => {
                     />
                 </div>
             </FormGroup>
-            <FormGroup>
+            <div>
                 <Button onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                     className="btn btn-primary">Save</Button>
-            </FormGroup>
+
+                <Button onClick={() => navigate("/tab")}>Cancel</Button>
+            </div>
         </Form>
-        <Button onClick={() => navigate("/tab")}>Cancel</Button>
+
 
 
     </>
@@ -148,7 +150,6 @@ export const TabForm = () => {
 const Dropdown = ({ label, options, onChange }) => {
     return (
         <div>
-            <Label for={label} >{label}</Label>
             <select onChange={(evt) => onChange(evt)}>
                 <option value={0}>Select your {label}</option>
                 {options.map((option) => (
